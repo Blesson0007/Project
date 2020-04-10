@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Projects.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Director)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lead)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Director)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lead)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MovieName">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.MovieName">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.MovieName">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
